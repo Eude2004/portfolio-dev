@@ -1,80 +1,165 @@
+/* Home.css */
+
 .home {
-    padding: 2rem 0;
-  }
-  
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
   .profile-container {
-    display: flex;
     flex-direction: row;
-    gap: 3rem;
-    align-items: center;
-    margin-bottom: 3rem;
+    align-items: flex-start;
+  }
+}
+
+/* Styles pour l'image de profil */
+.profile-image {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.placeholder-image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.placeholder-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
+}
+
+.placeholder-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 1;
+}
+
+.placeholder-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(20%) contrast(110%);
+  transition: filter 0.5s ease;
+}
+
+.placeholder-image:hover img {
+  filter: grayscale(0%) contrast(100%);
+}
+
+/* Contenu texte */
+.profile-content {
+  flex: 1;
+  color: #2d3748;
+}
+
+.profile-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #4f46e5, #10b981);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.profile-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #4a5568;
+}
+
+.profile-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #4a5568;
+}
+
+/* Section compétences */
+.skills h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #4f46e5;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skills-list span {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.skills-list span:hover {
+  background-color: #4f46e5;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Animation flottante */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 640px) {
+  .profile-content h1 {
+    font-size: 2rem;
   }
   
   .profile-image {
-    flex: 1;
-    max-width: 300px;
-  }
-  
-  .placeholder-image {
-    width: 100%;
-    aspect-ratio: 1;
-    background-color: #ddd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    color: #666;
-  }
-  
-  .profile-content {
-    flex: 2;
-  }
-  
-  .profile-content h1 {
-    margin-top: 0;
-    color: #2c3e50;
-  }
-  
-  .profile-content h2 {
-    color: #3498db;
-    margin-bottom: 1.5rem;
-  }
-  
-  .skills {
-    margin-top: 2rem;
-  }
-  
-  .skills h3 {
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
+    max-width: 250px;
   }
   
   .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
   
   .skills-list span {
-    background-color: #3498db;
-    color: white;
     padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
-  
-  @media (max-width: 768px) {
-    .profile-container {
-      flex-direction: column;
-      text-align: center;
-    }
-    
-    .profile-image, .profile-content {
-      max-width: 100%;
-    }
-    
-    .skills-list {
-      justify-content: center;
-    }
-  }
+}

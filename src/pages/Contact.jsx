@@ -27,11 +27,11 @@ function Contact() {
 
   return (
     <div className="contact">
-      <h1>Me Contacter</h1>
+      <h1>Nous Contacter </h1>
       
       {submitted ? (
         <div className="success-message">
-          <p>Merci pour votre message ! Je vous répondrai dès que possible.</p>
+          <p>Merci pour votre message ! Nous vous répondrons dès que possible.</p>
           <button onClick={() => setSubmitted(false)}>Envoyer un autre message</button>
         </div>
       ) : (
@@ -78,13 +78,13 @@ function Contact() {
       
       <div className="contact-info">
         <h2>Informations de contact</h2>
-        <p>Vous pouvez également me contacter directement :</p>
+        <p>Vous pouvez également Nous contacter directement :</p>
         <ul>
-          <li>Email: <a href="mailto:tsiemieude@gmail.com">Envoyez-moi un email</a></li>
+          <li>Email: <a href="mailto:tsiemieude@gmail.com">Envoyez-Nous un email</a></li>
           <li>WhatsApp: <a href="https://wa.me/237698182367" target="_blank" rel="noopener noreferrer">
-            Envoyez-moi un message sur WhatsApp</a></li>
+            Envoyez-Nous un message sur WhatsApp</a></li>
           <li>GitHub: <a href="https://github.com/tsiemi-eude" target="_blank" rel="noopener noreferrer">
-             Visitez mon profil GitHub</a></li>
+             Visitez notre profil GitHub</a></li>
         </ul>
       </div>
     </div>

@@ -1,20 +1,21 @@
-// src/pages/Home.jsx
 import './Home.css';
+import profileImage from '../../public/image1.jpeg';
 
 function Home() {
   return (
     <div className="home">
       <div className="profile-container">
         <div className="profile-image">
-          {/* Remplacez par votre propre image */}
-          <div className="placeholder-image">Votre Photo</div>
+          <div className="placeholder-image">
+            <img src={profileImage} alt="Profil GROUPE 7" />
+          </div>
         </div>
         <div className="profile-content">
-          <h1>Bonjour, je suis GROUPE 7 </h1>
+          <h1>Bonjour, Nous sommes GROUPE 7 </h1>
           <h2>Développeur Full Stack</h2>
           <p>
-            Bienvenue sur mon portfolio. Je suis passionné par le développement web
-            et la création d'applications performantes et intuitives. Spécialisé en
+            Bienvenue sur notre portfolio. Nous sommes passionnés par le développement web
+            et la création d'applications performantes et intuitives. Spécialisés en
             React.js, Node.js et d'autres technologies modernes.
           </p>
           <div className="skills">
